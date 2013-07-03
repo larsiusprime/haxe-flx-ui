@@ -1,10 +1,10 @@
 package org.flixel.plugin.leveluplabs;
 import flash.events.MouseEvent;
-import org.flixel.FlxCamera;
-import org.flixel.FlxG;
-import org.flixel.util.FlxRect;
-import org.flixel.FlxSprite;
-import org.flixel.util.FlxMath;
+import flixel.FlxCamera;
+import flixel.FlxG;
+import flixel.util.FlxRect;
+import flixel.FlxSprite;
+import flixel.util.FlxMath;
 
 /**
  * @author Lars Doucet
@@ -81,35 +81,35 @@ class FlxCheckBox extends FlxButtonPlusX
 		}
 	}
 	
-	public override function set_x(newX:Int):Int
-	{
-		_x = newX;
-		
-		buttonNormal.x = _x;
-		buttonHighlight.x = _x;
-		
-		if (_checkMark != null) {
-			_checkMark.x = buttonNormal.x;
-		}
-		
-		lineUpTextFields();
-		return newX;
-	}
-	
-	public override function set_y(newY:Int):Int
-	{
-		_y = newY;
-		
-		buttonNormal.y = _y;
-		buttonHighlight.y = _y;
-				
-		if (_checkMark != null) {
-			_checkMark.y = buttonNormal.y;
-		}
-		
-		lineUpTextFields();
-		return newY;
-	}
+	//public override function set_x(newX:Int):Int
+	//{
+		//x = newX;
+		//
+		//buttonNormal.x = x;
+		//buttonHighlight.x = x;
+		//
+		//if (_checkMark != null) {
+			//_checkMark.x = buttonNormal.x;
+		//}
+		//
+		//lineUpTextFields();
+		//return newX;
+	//}
+	//
+	//public override function set_y(newY:Int):Int
+	//{
+		//y = newY;
+		//
+		//buttonNormal.y = y;
+		//buttonHighlight.y = y;
+				//
+		//if (_checkMark != null) {
+			//_checkMark.y = buttonNormal.y;
+		//}
+		//
+		//lineUpTextFields();
+		//return newY;
+	//}
 	
 	/**
 	 * Center this button (on the X axis) Uses FlxG.width / 2 - button width / 2 to achieve this.<br />
@@ -144,7 +144,7 @@ class FlxCheckBox extends FlxButtonPlusX
 		{
 			if (buttonNormal.cameras == null)
 			{
-				buttonNormal.cameras = FlxG.cameras;
+				buttonNormal.cameras = FlxG.cameras.list;
 			}
 			
 			var c:FlxCamera;
@@ -191,10 +191,10 @@ class FlxCheckBox extends FlxButtonPlusX
 					textHighlight.visible = false;
 				}
 				
-				if (leaveCallback != null)
+				if (_leaveCallback != null)
 				{
 					//leaveCallback.apply(null, leaveCallbackParams);
-					Reflect.callMethod(null, leaveCallback, leaveCallbackParams);
+					Reflect.callMethod(null, _leaveCallback, _leaveCallbackParams);
 				}
 			}
 			else if (_status == HIGHLIGHT)
@@ -208,10 +208,10 @@ class FlxCheckBox extends FlxButtonPlusX
 					textHighlight.visible = true;
 				}
 				
-				if (enterCallback != null)
+				if (_enterCallback != null)
 				{
 					//enterCallback.apply(null, enterCallbackParams);
-					Reflect.callMethod(null, enterCallback, enterCallbackParams);
+					Reflect.callMethod(null, _enterCallback, _enterCallbackParams);
 				}
 			}
 		}

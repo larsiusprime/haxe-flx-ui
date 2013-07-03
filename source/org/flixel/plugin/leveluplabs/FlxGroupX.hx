@@ -1,12 +1,12 @@
 package org.flixel.plugin.leveluplabs;
-import org.flixel.FlxBasic;
-import org.flixel.FlxGroup;
-import org.flixel.FlxObject;
-import org.flixel.util.FlxPoint;
-import org.flixel.FlxSprite;
-import org.flixel.plugin.photonstorm.FlxButtonPlus;
+import flixel.FlxBasic;
+import flixel.group.FlxGroup;
+import flixel.FlxObject;
+import flixel.util.FlxPoint;
+import flixel.FlxSprite;
+import flixel.plugin.photonstorm.FlxButtonPlus;
 #if (cpp || neko)
-	import org.flixel.system.layer.Atlas;
+	import flixel.system.layer.Atlas;
 #end
 
 /**

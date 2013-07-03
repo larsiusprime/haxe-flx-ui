@@ -2,14 +2,14 @@ package org.flixel.plugin.leveluplabs;
 import haxe.xml.Fast;
 import flash.display.BitmapData;
 import flash.Lib;
-import org.flixel.FlxBasic;
-import org.flixel.FlxButton;
-import org.flixel.FlxG;
-import org.flixel.FlxGroup;
-import org.flixel.FlxObject;
-import org.flixel.FlxSprite;
-import org.flixel.FlxState;
-import org.flixel.FlxText;
+import flixel.FlxBasic;
+import flixel.ui.FlxButton;
+import flixel.FlxG;
+import flixel.group.FlxGroup;
+import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.text.FlxText;
 
 /**
  * This is a simple extension of FlxState that does two things:

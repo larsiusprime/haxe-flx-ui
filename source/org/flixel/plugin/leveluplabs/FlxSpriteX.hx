@@ -1,8 +1,8 @@
 package org.flixel.plugin.leveluplabs;
 import haxe.xml.Fast;
 import flash.geom.ColorTransform;
-import org.flixel.FlxGroup;
-import org.flixel.FlxSprite;
+import flixel.group.FlxGroup;
+import flixel.FlxSprite;
 
 /**
  * Cheap extension of FlxSprite

@@ -5,15 +5,15 @@ import haxe.xml.Fast;
 import flash.display.BitmapData;
 import flash.Lib;
 import openfl.Assets;
-import org.flixel.FlxBasic;
-import org.flixel.FlxButton;
-import org.flixel.FlxG;
-import org.flixel.FlxGroup;
-import org.flixel.FlxObject;
-import org.flixel.FlxSprite;
-import org.flixel.FlxState;
-import org.flixel.FlxText;
-import org.flixel.FlxTilemap;
+import flixel.FlxBasic;
+import flixel.ui.FlxButton;
+import flixel.FlxG;
+import flixel.group.FlxGroup;
+import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
 import org.flixel.plugin.leveluplabs.IEventGetter;
 
 /**
@@ -222,23 +222,23 @@ class FlxUI extends FlxGroupX implements IEventGetter
 						group.makeAtlas(str_id, FlxG.width, FlxG.height);
 					#end*/
 					
-					FlxG.log("Creating group (" + id + ")");
+					FlxG.log.add("Creating group (" + id + ")");
 				}
 			}
 					
 			
 			#if debug
 				//Useful debugging info, make sure things go in the right group:
-				FlxG.log("Member list...");
+				FlxG.log.add("Member list...");
 				for (fb in members) {
 					if (Std.is(fb, FlxGroupX)) {
 						var g:FlxGroupX = cast(fb, FlxGroupX);
-						FlxG.log("-->Group(" + g.str_id + "), length="+g.members.length);						
+						FlxG.log.add("-->Group(" + g.str_id + "), length="+g.members.length);						
 						for (fbb in g.members) {
-							FlxG.log("---->Member(" + fbb + ")");
+							FlxG.log.add("---->Member(" + fbb + ")");
 						}
 					}else {
-						FlxG.log("-->Thing(" + fb + ")");
+						FlxG.log.add("-->Thing(" + fb + ")");
 					}
 				}			
 			#end
@@ -1380,28 +1380,28 @@ class FlxUI extends FlxGroupX implements IEventGetter
 	}
 	
 	private function _onClickRadioGroup(params:Dynamic = null):Void {
-		FlxG.log("FlxUI._onClickRadioGroup(" + params + ")");
+		FlxG.log.add("FlxUI._onClickRadioGroup(" + params + ")");
 		if (_ptr != null) {
 			_ptr.getEvent("click_radio_group", this, params);
 		}	
 	}
 	
 	private function _onClickCheckBox(params:Dynamic = null):Void {
-		FlxG.log("FlxUI._onClickCheckBox(" + params + ")");
+		FlxG.log.add("FlxUI._onClickCheckBox(" + params + ")");
 		if (_ptr != null) {
 			_ptr.getEvent("click_checkbox", this, params);
 		}		
 	}
 	
 	private function _onClickButton(params:Dynamic = null):Void {
-		FlxG.log("FlxUI._onClickButton(" + params + ")");
+		FlxG.log.add("FlxUI._onClickButton(" + params + ")");
 		if (_ptr != null) {
 			_ptr.getEvent("click_button", this, params);
 		}
 	}
 	
 	private function _onClickButtonToggle(params:Dynamic = null):Void {
-		FlxG.log("FlxUI._onClickButtonToggle(" + params + ")");
+		FlxG.log.add("FlxUI._onClickButtonToggle(" + params + ")");
 		if (_ptr != null) {
 			_ptr.getEvent("click_button_toggle", this, params);
 		}

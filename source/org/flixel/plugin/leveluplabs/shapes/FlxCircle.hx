@@ -1,7 +1,7 @@
 package org.flixel.plugin.leveluplabs.shapes;
 
 import flash.geom.Point;
-import org.flixel.FlxG;
+import flixel.FlxG;
 
 /**
 

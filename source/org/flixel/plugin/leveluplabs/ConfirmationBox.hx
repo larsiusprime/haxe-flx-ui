@@ -1,5 +1,9 @@
 package org.flixel.plugin.leveluplabs;
 
+
+import flixel.FlxSprite;
+
+
 /**
  * ...
  * @author TiagoLr (~~~ ProG4mr ~~~)

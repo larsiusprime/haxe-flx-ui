@@ -1,6 +1,6 @@
 package org.flixel.plugin.leveluplabs;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
+import flixel.FlxG;
+import flixel.FlxSprite;
 
 /**
  * @author Lars Doucet
@@ -100,7 +100,7 @@ class FlxButtonToggle extends FlxGroupX
 	
 	private function _doToggle(value:Bool, Params:Dynamic = null):Void {
 		if (_ignore_clicks_this_frame) {			
-			FlxG.log("...ignore clicks");
+			FlxG.log.add("...ignore clicks");
 			return;
 		}
 		
@@ -110,7 +110,7 @@ class FlxButtonToggle extends FlxGroupX
 		_btn_toggle.visible = _toggle;
 				
 		if (_callback == null) {
-			FlxG.log("...null callback");
+			FlxG.log.add("...null callback");
 			return;
 		}
 		
@@ -131,7 +131,7 @@ class FlxButtonToggle extends FlxGroupX
 			arr.push("toggle:false");
 		}
 		
-		FlxG.log("...arr=" + arr);
+		FlxG.log.add("...arr=" + arr);
 		
 		_callback(arr);
 		_ignore_clicks_this_frame = true;

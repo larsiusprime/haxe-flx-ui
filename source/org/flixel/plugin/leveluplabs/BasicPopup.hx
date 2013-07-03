@@ -1,6 +1,6 @@
 package org.flixel.plugin.leveluplabs;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
+import flixel.FlxG;
+import flixel.FlxSprite;
 import org.flixel.plugin.leveluplabs.FlxGroupX;
 import org.flixel.plugin.leveluplabs.FlxTextX;
 import org.flixel.plugin.leveluplabs.U;

@@ -1,6 +1,7 @@
 package org.flixel.plugin.leveluplabs;
 import flash.events.MouseEvent;
-import org.flixel.plugin.photonstorm.FlxButtonPlus;
+import flixel.FlxG;
+import flixel.plugin.photonstorm.FlxButtonPlus;
 
 /**
  * An extension of Photonstorm's FlxButtonPlus, this adds more control over
@@ -75,11 +76,13 @@ class FlxButtonPlusX extends FlxButtonPlus
 		public function get_textX():Int { return _textX; }
 		public function get_textY():Int { return _textY; }
 	
-		public function set_textX(newX:Int) { _textX = newX; set_x(_x); return newX; }
-		public function set_textY(newY:Int) { _textY = newY; set_y(_y); return newY; } 
+		//public function set_textX(newX:Int) { _textX = newX; set_x(_x); return newX; }
+		//public function set_textY(newY:Int) { _textY = newY; set_y(_y); return newY; } 
 	
-		public override function set_x(newX:Int):Int{
-			super.set_x(newX);
+		//public override function set_x(newX:Int):Int{
+		public function set_textX(newX:Int):Int{
+			_textX = newX;
+			x = newX;
 			
 			if (textNormal != null) 
 				textNormal.x += _textX;
@@ -89,8 +92,10 @@ class FlxButtonPlusX extends FlxButtonPlus
 			return newX;
 		}
 		
-		public override function set_y(newY:Int):Int{
-			super.set_y(newY);
+		//public override function set_y(newY:Int):Int{
+		public function set_textY(newY:Int):Int{
+			_textY = newY;
+			y = newY;
 			
 			if (textNormal != null)
 				textNormal.y += _textY;
@@ -251,7 +256,7 @@ class FlxButtonPlusX extends FlxButtonPlus
 		ft.bold = bold;
 		//ft.underline = underline;
 		if (outline) {
-			ft.outline = true;
+			ft.useOutline = true;
 		}else {
 			if(shadow_which == 0 || shadow_which == 1){
 				ft.dropShadow = (shadow != 0);
@@ -295,7 +300,7 @@ class FlxButtonPlusX extends FlxButtonPlus
 		
 		if (exists && visible && active && click_test && (_onClick != null) && (pauseProof || !FlxG.paused))
 		{
-			Reflect.callMethod(this, Reflect.getProperty(this, "_onClick"),onClickParams);
+			Reflect.callMethod(this, Reflect.getProperty(this, "_onClick"),_onClickParams);
 		}
 	}
 	

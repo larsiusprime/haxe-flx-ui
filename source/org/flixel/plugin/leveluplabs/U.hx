@@ -6,11 +6,11 @@ import flash.geom.Point;
 import flash.Lib;
 import flash.text.Font;
 import openfl.Assets;
-import org.flixel.FlxBasic;
-import org.flixel.FlxG;
-import org.flixel.FlxGroup;
-import org.flixel.FlxObject;
-import org.flixel.FlxSprite;
+import flixel.FlxBasic;
+import flixel.FlxG;
+import flixel.group.FlxGroup;
+import flixel.FlxObject;
+import flixel.FlxSprite;
 
 /**
  * Utility functions, inlined where possible

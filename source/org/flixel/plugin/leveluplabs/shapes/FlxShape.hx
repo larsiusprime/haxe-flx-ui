@@ -8,8 +8,8 @@ import flash.geom.ColorTransform;
 import flash.geom.Matrix;
 import flash.geom.Point;
 import flash.geom.Rectangle;
-import org.flixel.FlxG;
-import org.flixel.FlxObject;
+import flixel.FlxG;
+import flixel.FlxObject;
 
 /**
  * ...

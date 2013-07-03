@@ -3,15 +3,16 @@ package org.flixel.plugin.leveluplabs;
 import flash.display.BitmapData;
 import flash.geom.Rectangle;
 import flash.Lib;
-import org.flixel.FlxBasic;
-import org.flixel.FlxButton;
-import org.flixel.FlxG;
-import org.flixel.FlxGroup;
-import org.flixel.FlxObject;
-import org.flixel.util.FlxPoint;
-import org.flixel.util.FlxRect;
-import org.flixel.FlxSprite;
+import flixel.FlxBasic;
+import flixel.ui.FlxButton;
+import flixel.FlxG;
+import flixel.group.FlxGroup;
+import flixel.FlxObject;
+import flixel.util.FlxPoint;
+import flixel.util.FlxRect;
+import flixel.FlxSprite;
 import org.flixel.plugin.leveluplabs.FlxGroupX;
+@:access(flixel.ui.FlxButton)
 /**
 * ...
 * @author 
@@ -298,7 +299,7 @@ class TabGroup extends FlxGroupX
 		}else if (Std.is(curr_obj ,FlxButton)) {
 			
 			var btn:FlxButton = cast(curr_obj, FlxButton);
-			if (btn.onUp != null) {	
+			if (btn._onUp != null) {	
 				if (Std.is(btn , FlxButtonPlusX) && cast(btn, FlxButtonPlusX).id == "invis") {	
 					// TODO - implement mouse snap.
 					//FlxG.snapVMouseToLoc(btn.x + btn.width/2, btn.y + btn.height/2); 

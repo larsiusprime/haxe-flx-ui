@@ -4,7 +4,7 @@ import flash.filters.GlowFilter;
 import flash.text.AntiAliasType;
 import flash.text.TextField;
 import flash.text.TextFormat;
-import org.flixel.FlxText;
+import flixel.text.FlxText;
 
 /**
  * Simple extension to the basic text field class. Basically, 
@@ -18,7 +18,6 @@ class FlxTextX extends FlxText
 	public var dropShadow(get, set):Bool;	
 	private var _dropShadow:Bool = false;
 	public var bold(default, set):Bool;
-	public var outline(default, set):Bool;
 	
 	public function new(X:Float, Y:Float, Width:Int, Text:String = null, EmbeddedFont:Bool = true)	
 	{
@@ -48,14 +47,14 @@ class FlxTextX extends FlxText
 		return _dropShadow;
 	}	
 	
-	function set_outline(b:Bool) {
+	private override function set_useOutline(b:Bool) {
 		if (b) {
 			addFilter(new GlowFilter(0, 1, 2, 2, 1, 1, false, false));
 		}else {
 			removeAllFilters();
 		}
 		_regen = true;
-		outline = b;
+		super.set_useOutline (b);
 		calcFrame();
 		return b;
 	}
