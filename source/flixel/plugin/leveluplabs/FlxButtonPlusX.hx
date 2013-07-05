@@ -1,7 +1,7 @@
 package flixel.plugin.leveluplabs;
 import flash.events.MouseEvent;
 import flixel.FlxG;
-import flixel.plugin.photonstorm.FlxButtonPlus;
+import flixel.addons.ui.FlxButtonPlus;
 
 /**
  * An extension of Photonstorm's FlxButtonPlus, this adds more control over

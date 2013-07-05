@@ -4,7 +4,7 @@ import flixel.group.FlxGroup;
 import flixel.FlxObject;
 import flixel.util.FlxPoint;
 import flixel.FlxSprite;
-import flixel.plugin.photonstorm.FlxButtonPlus;
+import flixel.addons.ui.FlxButtonPlus;
 #if (cpp || neko)
 	import flixel.system.layer.Atlas;
 #end
